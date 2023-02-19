@@ -1,3 +1,4 @@
+#function defenition 
 def get_value_from_path(nes_dict, key_to_search):
     key_list = key_to_search.split("/")
     value = nes_dict
@@ -8,13 +9,12 @@ def get_value_from_path(nes_dict, key_to_search):
     else:
         return None
 
-
+#nested dictionary 
 nested_dict = {
     'abc': "111",
     'a': {
         'b': {
-            'c': 'd',
-            'e': 'f'
+            'c': 'd'
         }
     }
 }
@@ -26,3 +26,5 @@ if value_returned:
     print(f"Key '{key_to_find}' found in nested dict, value:{value_returned}")
 else:
     print(f"Key '{key_to_find}' not found in nested dict!!!")
+    
+    
