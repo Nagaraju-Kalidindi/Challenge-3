@@ -1,15 +1,3 @@
-
-def get_value_from_nested_dict(nes_dict, key_to_search):
-    if key_to_search in nes_dict:
-        return nes_dict[key_to_search]
-    for key, value in nes_dict.items():
-        if isinstance(value, dict):
-            returned_value = get_value_from_nested_dict(value, key_to_search)
-            if returned_value is not None:
-                return returned_value
-    return None
-
-
 def get_value_from_path(nes_dict, key_to_search):
     key_list = key_to_search.split("/")
     value = nes_dict
@@ -27,15 +15,11 @@ nested_dict = {
         'b': {
             'c': 'd',
             'e': 'f'
-        },
-        'adf': {
-            'aaaa': "2222"
-        },
-        "aaaa": "4444"
+        }
     }
 }
 
-key_to_find = "a/b/z"
+key_to_find = "a/b/c"
 value_returned = get_value_from_path(nested_dict, key_to_find)
 
 if value_returned:
